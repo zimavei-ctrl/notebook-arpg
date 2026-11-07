@@ -1,0 +1,124 @@
+/* Touch layout for the published 0.31 game. Desktop keeps its original UI. */
+#mobile-controls, #fullscreen-btn { display: none; }
+html.mobile-ui, .mobile-ui body { width: 100%; height: 100%; min-width: 0; overflow: hidden; overscroll-behavior: none; }
+.mobile-ui body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.mobile-ui button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.mobile-ui #app { height: 100dvh; max-height: none; padding: env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px); }
+.mobile-ui .topbar { height: 44px; flex: 0 0 44px; padding: 0 8px; gap: 6px; }
+.mobile-ui .brand { gap: 4px; }
+.mobile-ui .brand strong { font-size: 10px; letter-spacing: .4px; }
+.mobile-ui .brand small, .mobile-ui .brand-mark, .mobile-ui .smalllabel, .mobile-ui kbd, .mobile-ui .corner-ornament, .mobile-ui #map-btn { display: none; }
+.mobile-ui .location-heading { min-width: 0; }
+.mobile-ui .location-heading #location-title { font-size: 12px; }
+.mobile-ui .top-actions { gap: 4px; }
+.mobile-ui .top-actions button { min-height: 36px; padding: 5px 8px; font-size: 12px; }
+.mobile-ui #game { touch-action: none; }
+.mobile-ui .footer { flex: 0 0 19px; height: 19px; padding: 3px 8px; font-size: 9px; justify-content: center; }
+.mobile-ui .footer > span:first-child { display: none; }
+.mobile-ui .hud { inset: 0; transform: none; width: 100%; max-width: none; min-height: 0; display: block; border-radius: 0; padding: 0; background: none; box-shadow: none; }
+.mobile-ui .orb-container { position: absolute; left: 10px; top: 9px; width: clamp(115px,32vw,180px); }
+.mobile-ui .orb-container.blue { top: 33px; }
+.mobile-ui .orb { width: 100%; height: 20px; border: 2px solid #3c4c6b; border-radius: 6px; outline: none; }
+.mobile-ui .orb-numbers { font-size: 10px; }
+.mobile-ui .orb-container > small { display: none; }
+.mobile-ui .player-summary { position: absolute; left: 11px; top: 58px; min-width: 0; padding: 0; text-align: left; width: 115px; }
+.mobile-ui .player-class, .mobile-ui .hud-shortcuts { display: none; }
+.mobile-ui .player-level { font-size: 10px; }
+.mobile-ui .player-level b { font-size: 11px; }
+.mobile-ui .exp-container { margin: 3px 0; }
+.mobile-ui .hotbar { position: absolute; right: 12px; bottom: 112px; gap: 6px; padding: 0; }
+.mobile-ui .skill-button { width: 50px; height: 50px; border-radius: 9px; }
+.mobile-ui .skill-button svg { width: 29px; height: 29px; }
+.mobile-ui .skill-button .shortcut { display: none; }
+.mobile-ui .skill-button .mana-cost { font-size: 9px; }
+.mobile-ui .potion-column { position: absolute; right: 12px; bottom: 60px; padding: 0; gap: 6px; }
+.mobile-ui .potion-column button { width: 50px; height: 44px; border: 2px solid #5c6e8d; border-radius: 9px; padding: 1px; }
+.mobile-ui .potion-icon { display: inline; font-size: 23px; line-height: 24px; }
+.mobile-ui .potion-column small { display: inline; font-size: 12px; }
+.mobile-ui .dodge-button { position: absolute; right: 124px; bottom: 60px; width: 50px; height: 44px; min-width: 0; margin: 0; border-radius: 9px; }
+.mobile-ui .dodge-button b { font-size: 25px; line-height: 24px; }
+.mobile-ui .dodge-button span { font-size: 8px; }
+.mobile-ui #bag-toggle { top: 9px; right: 10px; bottom: auto; height: 42px; padding: 3px 9px; gap: 5px; font-size: 10px; transform: none; border-radius: 8px; }
+.mobile-ui #bag-toggle .bag-symbol { font-size: 24px; }
+.mobile-ui .minimap-wrap { top: 60px; right: 10px; transform: scale(.48); transform-origin: top right; pointer-events: none; }
+.mobile-ui .quest-card { top: 86px; left: 10px; width: min(220px,59vw); padding: 5px 8px; box-shadow: 1px 2px 0 #303a3026; }
+.mobile-ui .quest-card strong { font-size: 12px; margin: 0; }
+.mobile-ui .quest-card p { display: none; }
+.mobile-ui .quest-progress { font-size: 9px; margin-top: 3px; }
+.mobile-ui #toast-container { top: 120px; width: min(85%,400px); }
+.mobile-ui .toast { font-size: 12px; padding: 7px 10px; text-align: center; }
+.mobile-ui #tip { display: none; }
+.mobile-ui #mobile-controls { position: absolute; inset: 0; z-index: 14; display: block; pointer-events: none; }
+.mobile-ui #mobile-controls > * { pointer-events: auto; touch-action: none; }
+#move-stick { position: absolute; left: 16px; bottom: 22px; width: 112px; height: 112px; border: 2px solid #4b63858c; border-radius: 50%; background: radial-gradient(circle,#eee7d555,#cbd7e84d); box-shadow: inset 0 0 0 9px #f5efdf40; }
+#move-stick::after { content: 'ДВИЖЕНИЕ'; position: absolute; bottom: 9px; left: 0; right: 0; text-align: center; font: 8px Arial,sans-serif; color: #3d5682; letter-spacing: 1px; }
+#stick-thumb { position: absolute; left: 34px; top: 34px; width: 40px; height: 40px; border: 2px solid #3a537c; border-radius: 50%; background: #ede4c9cf; box-shadow: 0 2px 5px #1d2d4b44; pointer-events: none; }
+.mobile-action { position: absolute; bottom: 10px; border: 2px solid #394f7c; border-radius: 10px; color: #263e6e; background: #e6dbbfdc; box-shadow: 2px 3px 0 #25365633; font: bold 11px Arial,sans-serif; }
+#mobile-attack { right: 12px; width: 106px; height: 44px; background: #b54d60ed; color: #fff4dd; border-color: #6c324e; font-size: 14px; }
+#mobile-interact { right: 124px; width: 50px; height: 44px; font-size: 10px; }
+.mobile-action.pressed, #move-stick.pressed { filter: brightness(1.15); }
+.mobile-ui .major { width: calc(100vw - 16px); min-height: 0; max-height: calc(100dvh - 20px); overflow: auto; }
+.mobile-ui .welcome-layout { grid-template-columns: 1fr; min-height: 0; }
+.mobile-ui .welcome-copy { padding: 13px 18px; }
+.mobile-ui .welcome-copy .eyebrow, .mobile-ui .ink-sigil, .mobile-ui .welcome-copy p, .mobile-ui .intro-note { display: none; }
+.mobile-ui .welcome-copy h1 { margin: 0; font-size: 22px; line-height: 1.1; text-align: center; }
+.mobile-ui .welcome-copy h1 br { display: none; }
+.mobile-ui .welcome-copy h1 i { font-size: 23px; }
+.mobile-ui .class-section { padding: 15px 10px; }
+.mobile-ui .modal-kicker { font-size: 10px; margin-bottom: 12px; letter-spacing: 1px; }
+.mobile-ui .classes { gap: 6px; }
+.mobile-ui .class-card { min-height: 0; padding: 6px 2px 10px; }
+.mobile-ui .choose-art { height: clamp(110px,24dvh,190px); }
+.mobile-ui .class-card strong { font-size: 11px; letter-spacing: 0; margin-top: 5px; }
+.mobile-ui .class-card small { font-size: 9px; line-height: 1.4; text-align: center; }
+.mobile-ui .micro-note { margin-top: 12px; font-size: 12px; }
+.mobile-ui .primary.large { margin-top: 13px; padding: 12px; font-size: 12px; }
+.mobile-ui .game-panel { width: calc(100vw - 20px); max-height: calc(100dvh - 30px); padding: 18px; overscroll-behavior: contain; }
+.mobile-ui .game-panel .close { min-width: 44px; min-height: 44px; }
+.mobile-ui #inventory-panel.notebook-journal { inset: max(5px,env(safe-area-inset-top)) max(5px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left)); transform: none; width: auto; height: auto; max-height: none; }
+.mobile-ui .notebook-journal::before { display: none; }
+.mobile-ui .journal-head { display: flex; min-height: 55px; padding: 4px 5px; gap: 4px; flex-shrink: 0; }
+.mobile-ui .journal-brand { display: none; }
+.mobile-ui .journal-tabs { flex: 1; justify-content: flex-start; overflow-x: auto; padding: 3px; gap: 5px; }
+.mobile-ui .journal-tabs button { flex: 0 0 auto; min-height: 40px; font-size: 12px; padding: 5px 8px; transform: none; }
+.mobile-ui .journal-close { flex: 0 0 44px; }
+.mobile-ui .journal-content { display: flex; flex-direction: column; overflow-y: auto; padding: 8px; gap: 12px; overscroll-behavior: contain; }
+.mobile-ui .journal-character { display: none; order: 3; flex-shrink: 0; }
+.mobile-ui #inventory-panel[data-tab="hero"] .journal-character { display: block; }
+.mobile-ui .journal-right { order: 1; flex: 0 0 auto; overflow: visible; padding: 10px; }
+.mobile-ui .journal-view { overflow: visible; }
+.mobile-ui .journal-character-stage { display: none; order: 2; flex: 0 0 380px; min-height: 380px; }
+.mobile-ui #inventory-panel[data-tab="bag"] .journal-character-stage { display: block; }
+.mobile-ui #inventory-panel.notebook-journal .journal-equipment .equip-slot { width: 63px; height: 69px; }
+.mobile-ui #inventory-panel.notebook-journal .journal-equipment .equip-slot small { font-size: 9px; padding: 2px 0; }
+.mobile-ui .journal-bottom { min-height: 35px; flex-shrink: 0; gap: 12px; padding: 5px; font-size: 10px; }
+.mobile-ui .journal-bottom > span { display: none; }
+.mobile-ui #inventory-panel.notebook-journal .inventory-grid { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 5px; }
+.mobile-ui .journal-bag-actions { flex-wrap: wrap; }
+.mobile-ui .journal-bag-actions button, .mobile-ui .journal-pagination button, .mobile-ui .stat-row button, .mobile-ui .skill-entry button, .mobile-ui .journal-map-controls button { min-height: 44px; min-width: 44px; }
+.mobile-ui .mobile-item-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.mobile-ui .mobile-item-actions button { min-height: 44px; padding: 8px 14px; border: 1px solid #546b99; background: #e4dcc1; color: #293f79; }
+.mobile-ui #fullscreen-btn { display: block; }
+.mobile-ui .death-content h2 { font-size: 27px; }
+@media (max-width: 360px) {
+  .mobile-ui #inventory-panel.notebook-journal .inventory-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+  .mobile-ui #move-stick { width: 96px; height: 96px; left: 10px; }
+  .mobile-ui #stick-thumb { left: 26px; top: 26px; }
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .mobile-ui .topbar { height: 36px; flex-basis: 36px; }
+  .mobile-ui .footer { display: none; }
+  .mobile-ui .welcome-layout { grid-template-columns: 28% 72%; }
+  .mobile-ui .welcome-copy { display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .mobile-ui .welcome-copy h1 { font-size: 23px; }
+  .mobile-ui .class-section { padding: 8px 12px; }
+  .mobile-ui .choose-art { height: 100px; }
+  .mobile-ui .micro-note { margin: 6px auto 0; }
+  .mobile-ui .class-card small { display: none; }
+  .mobile-ui .quest-card { top: 84px; width: 210px; }
+  .mobile-ui .minimap-wrap { top: 58px; transform: scale(.4); }
+  .mobile-ui #toast-container { top: 8px; max-width: 42%; }
+  .mobile-ui .journal-content { padding: 8px; }
+  .mobile-ui #inventory-panel[data-tab="bag"] .journal-content { display: grid; grid-template-columns: minmax(260px,1fr) minmax(250px,1fr); align-items: start; }
+  .mobile-ui #inventory-panel[data-tab="bag"] .journal-character-stage { display: block; height: 380px; }
+}
